@@ -27,14 +27,13 @@ class Annonce {
   final String idProprietaire;
 
   factory Annonce.fromJson(Map<String, dynamic> json) {
-    if (json
-        case {
-          'id': String id,
-          'titre': String titre,
-          'categorie': String categorie,
-          'statut': String statut,
-          'idProprietaire': String idProprietaire,
-        }) {
+    if (json case {
+      'id': String id,
+      'titre': String titre,
+      'categorie': String categorie,
+      'statut': String statut,
+      'idProprietaire': String idProprietaire,
+    }) {
       final description = switch (json['description']) {
         null => null,
         String s => s,
@@ -53,13 +52,13 @@ class Annonce {
   }
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'titre': titre,
-        if (description != null) 'description': description,
-        'categorie': categorie.name,
-        'statut': statut.name,
-        'idProprietaire': idProprietaire,
-      };
+    'id': id,
+    'titre': titre,
+    if (description != null) 'description': description,
+    'categorie': categorie.name,
+    'statut': statut.name,
+    'idProprietaire': idProprietaire,
+  };
 
   @override
   String toString() =>

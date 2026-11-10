@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/ecran_accueil.dart';
-
-const Color couleurGraine = Color(0xFF2E7D6B);
+import 'theme/theme_localswap.dart';
 
 void main() {
   runApp(const LocalSwapApp());
@@ -15,16 +14,9 @@ class LocalSwapApp extends StatelessWidget {
     return MaterialApp(
       title: 'LocalSwap',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: couleurGraine),
-      ),
-      darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: couleurGraine,
-          brightness: Brightness.dark,
-        ),
-      ),
-      themeMode: ThemeMode.dark,
+      theme: construireTheme(Brightness.light),
+      darkTheme: construireTheme(Brightness.dark),
+      themeMode: ThemeMode.system,
       home: const EcranAccueil(),
     );
   }

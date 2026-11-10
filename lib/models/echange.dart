@@ -12,13 +12,12 @@ class Echange {
   final DateTime dateEchange;
 
   factory Echange.fromJson(Map<String, dynamic> json) {
-    if (json
-        case {
-          'id': String id,
-          'idAnnonce': String idAnnonce,
-          'idDemandeur': String idDemandeur,
-          'dateEchange': String dateEchange,
-        }) {
+    if (json case {
+      'id': String id,
+      'idAnnonce': String idAnnonce,
+      'idDemandeur': String idDemandeur,
+      'dateEchange': String dateEchange,
+    }) {
       return Echange(
         id: id,
         idAnnonce: idAnnonce,
@@ -30,12 +29,13 @@ class Echange {
   }
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'idAnnonce': idAnnonce,
-        'idDemandeur': idDemandeur,
-        'dateEchange': dateEchange.toIso8601String(),
-      };
+    'id': id,
+    'idAnnonce': idAnnonce,
+    'idDemandeur': idDemandeur,
+    'dateEchange': dateEchange.toIso8601String(),
+  };
 
   @override
-  String toString() => 'Echange($id, annonce $idAnnonce, demandeur $idDemandeur)';
+  String toString() =>
+      'Echange($id, annonce $idAnnonce, demandeur $idDemandeur)';
 }

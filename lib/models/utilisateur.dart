@@ -10,22 +10,21 @@ class Utilisateur {
   final int reputation;
 
   factory Utilisateur.fromJson(Map<String, dynamic> json) {
-    if (json
-        case {
-          'id': String id,
-          'nom': String nom,
-          'reputation': int reputation,
-        }) {
+    if (json case {
+      'id': String id,
+      'nom': String nom,
+      'reputation': int reputation,
+    }) {
       return Utilisateur(id: id, nom: nom, reputation: reputation);
     }
     throw FormatException('Utilisateur : JSON invalide : $json');
   }
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'nom': nom,
-        'reputation': reputation,
-      };
+    'id': id,
+    'nom': nom,
+    'reputation': reputation,
+  };
 
   @override
   String toString() => 'Utilisateur($id, $nom, réputation $reputation/5)';
